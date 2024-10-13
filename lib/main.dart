@@ -145,7 +145,7 @@ class _LuckyDiceChangerState extends State<LuckyDiceChanger> {
                     style: TextStyle(
                       color: Colors.black,
                       fontFamily: 'Amaranth',
-                      fontSize: 20,
+                      fontSize: 18,
                       fontStyle: FontStyle.italic,
                     ),
                   ),
@@ -164,7 +164,7 @@ class _LuckyDiceChangerState extends State<LuckyDiceChanger> {
                     style: TextStyle(
                       color: Colors.black,
                       fontFamily: 'Amaranth',
-                      fontSize: 20,
+                      fontSize: 18,
                       fontStyle: FontStyle.italic,
                     ),
                   ),
@@ -183,7 +183,7 @@ class _LuckyDiceChangerState extends State<LuckyDiceChanger> {
                     style: TextStyle(
                       color: Colors.black,
                       fontFamily: 'Amaranth',
-                      fontSize: 20,
+                      fontSize: 18,
                       fontStyle: FontStyle.italic,
                     ),
                   ),
@@ -202,7 +202,7 @@ class _LuckyDiceChangerState extends State<LuckyDiceChanger> {
                     style: TextStyle(
                       color: Colors.black,
                       fontFamily: 'Amaranth',
-                      fontSize: 20,
+                      fontSize: 18,
                       fontStyle: FontStyle.italic,
                     ),
                   ),
@@ -221,7 +221,7 @@ class _LuckyDiceChangerState extends State<LuckyDiceChanger> {
                     style: TextStyle(
                       color: Colors.black,
                       fontFamily: 'Amaranth',
-                      fontSize: 20,
+                      fontSize: 18,
                       fontStyle: FontStyle.italic,
                     ),
                   ),
@@ -241,7 +241,7 @@ class _LuckyDiceChangerState extends State<LuckyDiceChanger> {
                     style: TextStyle(
                       color: Colors.black,
                       fontFamily: 'Amaranth',
-                      fontSize: 20,
+                      fontSize: 18,
                       fontStyle: FontStyle.italic,
                     ),
                   ),
