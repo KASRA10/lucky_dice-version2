@@ -31,6 +31,18 @@ class _LuckyDiceChangerState extends State<LuckyDiceChanger> {
         toastLength: Toast.LENGTH_LONG,
       );
 
+  int imageNumber = 1;
+  int sixCounter = 0;
+
+  // Create A Random Number Between 1 to 6 For Showing Dice Images With Their Number.
+  void imageNumberChanger() {
+    setState(
+      () {
+        imageNumber = Random().nextInt(6) + 1;
+      },
+    );
+  } // End Of imageNumberCHanger
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -41,7 +53,7 @@ class _LuckyDiceChangerState extends State<LuckyDiceChanger> {
           shadowColor: Colors.green[400],
           elevation: 15,
           centerTitle: true,
-          shape: RoundedRectangleBorder(
+          shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.only(
               bottomLeft: Radius.circular(
                 15.0,
@@ -55,7 +67,7 @@ class _LuckyDiceChangerState extends State<LuckyDiceChanger> {
             color: Colors.white,
             onPressed: () => exit(0),
           ),
-          title: Text(
+          title: const Text(
             'Lucky Dice',
             style: TextStyle(
               color: Colors.white,
@@ -70,7 +82,7 @@ class _LuckyDiceChangerState extends State<LuckyDiceChanger> {
               onPressed: () => newToastMessage(
                 'It is Not Available',
               ),
-              child: Icon(
+              child: const Icon(
                 Icons.short_text_sharp,
                 color: Colors.white,
                 semanticLabel: 'Go To Main Menu, Setting',
@@ -82,7 +94,7 @@ class _LuckyDiceChangerState extends State<LuckyDiceChanger> {
           child: Center(
             child: Column(
               children: [
-                Text(
+                const Text(
                   'Every Dice Number Has A Special Meaning Here!!!',
                   style: TextStyle(
                     color: Colors.black,
@@ -90,12 +102,12 @@ class _LuckyDiceChangerState extends State<LuckyDiceChanger> {
                     fontSize: 14,
                   ),
                 ),
-                Divider(
+                const Divider(
                   color: Colors.black,
                   endIndent: 100,
                   indent: 100,
                 ),
-                Text(
+                const Text(
                   'All Your Six Dices Would Be Counted',
                   style: TextStyle(
                     color: Colors.black,
@@ -103,7 +115,7 @@ class _LuckyDiceChangerState extends State<LuckyDiceChanger> {
                     fontSize: 12,
                   ),
                 ),
-                Divider(
+                const Divider(
                   color: Colors.black,
                   endIndent: 150,
                   indent: 150,
@@ -112,7 +124,7 @@ class _LuckyDiceChangerState extends State<LuckyDiceChanger> {
                   width: double.infinity,
                   color: Colors.green[400],
                   alignment: Alignment.center,
-                  child: Text(
+                  child: const Text(
                     'Good Luck',
                     style: TextStyle(
                       color: Colors.black,
@@ -128,7 +140,7 @@ class _LuckyDiceChangerState extends State<LuckyDiceChanger> {
                     width: 30,
                     semanticLabel: 'A First Dice Icon',
                   ),
-                  title: Text(
+                  title: const Text(
                     '1. It is Just Beginning!',
                     style: TextStyle(
                       color: Colors.black,
@@ -144,7 +156,7 @@ class _LuckyDiceChangerState extends State<LuckyDiceChanger> {
                     width: 30,
                     semanticLabel: 'A Second Dice Icon',
                   ),
-                  title: Text(
+                  title: const Text(
                     '2. Even Not Close!',
                     style: TextStyle(
                       color: Colors.black,
@@ -160,7 +172,7 @@ class _LuckyDiceChangerState extends State<LuckyDiceChanger> {
                     width: 30,
                     semanticLabel: 'A Third Dice Icon',
                   ),
-                  title: Text(
+                  title: const Text(
                     '3. Never Give Up!',
                     style: TextStyle(
                       color: Colors.black,
@@ -176,7 +188,7 @@ class _LuckyDiceChangerState extends State<LuckyDiceChanger> {
                     width: 30,
                     semanticLabel: 'A Fourth Dice Icon',
                   ),
-                  title: Text(
+                  title: const Text(
                     '4. a little More!',
                     style: TextStyle(
                       color: Colors.black,
@@ -192,7 +204,7 @@ class _LuckyDiceChangerState extends State<LuckyDiceChanger> {
                     width: 30,
                     semanticLabel: 'A Fifth Dice Icon',
                   ),
-                  title: Text(
+                  title: const Text(
                     '5. Not Today!',
                     style: TextStyle(
                       color: Colors.black,
@@ -208,7 +220,7 @@ class _LuckyDiceChangerState extends State<LuckyDiceChanger> {
                     width: 30,
                     semanticLabel: 'A Sixth Dice Icon',
                   ),
-                  title: Text(
+                  title: const Text(
                     '6. BOOM!',
                     style: TextStyle(
                       color: Colors.black,
@@ -218,6 +230,11 @@ class _LuckyDiceChangerState extends State<LuckyDiceChanger> {
                     ),
                   ),
                 ),
+                Expanded(
+                  child: Image.asset(
+                    'lib/images/dice$imageNumber',
+                  ),
+                )
               ], // columnChildren[]
             ),
           ),
