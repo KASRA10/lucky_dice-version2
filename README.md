@@ -17,8 +17,11 @@ You Can Read More About The History Of Dice Games Here:
 # [![My Skills](https://skillicons.dev/icons?i=vscode)](https://skillicons.dev) What Is VS Code?
 Visual Studio Code (VS Code) is a powerful, lightweight source code editor developed by Microsoft. It is designed to facilitate a smooth coding experience across various platforms, including Windows, macOS, and Linux.
 
-# Preview
+# Image Preview
 ![LuckyDiceKasraK10Flutter](https://github.com/user-attachments/assets/7ff37b3e-e1cb-4c14-928b-c3f2837d83f7)
+
+# Video Preview
+https://github.com/user-attachments/assets/d1c72ee3-d610-4d79-b8c5-ecd9957be9c9
 
 # Contribution
 Since it is my training code and actually is it something like my **portfolio**, please do  not use all my codes and UI, and There is no way to contribute to this repository.
