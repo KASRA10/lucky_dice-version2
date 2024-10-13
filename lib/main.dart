@@ -41,11 +41,7 @@ class _LuckyDiceChangerState extends State<LuckyDiceChanger> {
         imageNumber = Random().nextInt(6) + 1;
       },
     );
-    if (imageNumber == 6) {
-      sixCounter++;
-    } else {
-      sixCounter;
-    }
+    sixCounter += imageNumber == 6 ? 1 : 0;
   } // End Of imageNumberCHanger
 
   // Reset Numbers Method
@@ -60,6 +56,7 @@ class _LuckyDiceChangerState extends State<LuckyDiceChanger> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: Colors.white,
         appBar: AppBar(
           backgroundColor: Colors.green[400],
           toolbarHeight: 70.0,
@@ -106,6 +103,7 @@ class _LuckyDiceChangerState extends State<LuckyDiceChanger> {
         body: SafeArea(
           child: Center(
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const Text(
                   'Every Dice Number Has A Special Meaning Here!!!',
@@ -133,207 +131,220 @@ class _LuckyDiceChangerState extends State<LuckyDiceChanger> {
                   endIndent: 150,
                   indent: 150,
                 ),
-                Container(
-                  width: double.infinity,
-                  color: Colors.green[400],
-                  alignment: Alignment.center,
-                  child: const Text(
-                    'Good Luck',
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontFamily: 'Amaranth',
-                      fontSize: 36,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
                 ListTile(
+                  contentPadding: const EdgeInsets.symmetric(
+                    horizontal: 98.0,
+                  ),
                   leading: Image.asset(
                     'lib/images/dice1.png',
-                    width: 30,
+                    width: 20,
                     semanticLabel: 'A First Dice Icon',
                   ),
                   title: const Text(
-                    '1. It is Just Beginning!',
+                    'It is Just Beginning!',
                     style: TextStyle(
                       color: Colors.black,
                       fontFamily: 'Amaranth',
-                      fontSize: 22,
+                      fontSize: 20,
                       fontStyle: FontStyle.italic,
                     ),
                   ),
                 ),
                 ListTile(
+                  contentPadding: const EdgeInsets.symmetric(
+                    horizontal: 98.0,
+                  ),
                   leading: Image.asset(
                     'lib/images/dice2.png',
-                    width: 30,
+                    width: 20,
                     semanticLabel: 'A Second Dice Icon',
                   ),
                   title: const Text(
-                    '2. Even Not Close!',
+                    'Even Not Close!',
                     style: TextStyle(
                       color: Colors.black,
                       fontFamily: 'Amaranth',
-                      fontSize: 22,
+                      fontSize: 20,
                       fontStyle: FontStyle.italic,
                     ),
                   ),
                 ),
                 ListTile(
+                  contentPadding: const EdgeInsets.symmetric(
+                    horizontal: 98.0,
+                  ),
                   leading: Image.asset(
                     'lib/images/dice3.png',
-                    width: 30,
+                    width: 20,
                     semanticLabel: 'A Third Dice Icon',
                   ),
                   title: const Text(
-                    '3. Never Give Up!',
+                    'Never Give Up!',
                     style: TextStyle(
                       color: Colors.black,
                       fontFamily: 'Amaranth',
-                      fontSize: 22,
+                      fontSize: 20,
                       fontStyle: FontStyle.italic,
                     ),
                   ),
                 ),
                 ListTile(
+                  contentPadding: const EdgeInsets.symmetric(
+                    horizontal: 98.0,
+                  ),
                   leading: Image.asset(
                     'lib/images/dice4.png',
-                    width: 30,
+                    width: 20,
                     semanticLabel: 'A Fourth Dice Icon',
                   ),
                   title: const Text(
-                    '4. a little More!',
+                    'A little More!',
                     style: TextStyle(
                       color: Colors.black,
                       fontFamily: 'Amaranth',
-                      fontSize: 22,
+                      fontSize: 20,
                       fontStyle: FontStyle.italic,
                     ),
                   ),
                 ),
                 ListTile(
+                  contentPadding: const EdgeInsets.symmetric(
+                    horizontal: 98.0,
+                  ),
                   leading: Image.asset(
                     'lib/images/dice5.png',
-                    width: 30,
+                    width: 20,
                     semanticLabel: 'A Fifth Dice Icon',
                   ),
                   title: const Text(
-                    '5. Not Today!',
+                    'Not Today!',
                     style: TextStyle(
                       color: Colors.black,
                       fontFamily: 'Amaranth',
-                      fontSize: 22,
+                      fontSize: 20,
                       fontStyle: FontStyle.italic,
                     ),
                   ),
                 ),
                 ListTile(
+                  contentPadding: const EdgeInsets.symmetric(
+                    horizontal: 98.0,
+                  ),
+                  enableFeedback: true,
                   leading: Image.asset(
                     'lib/images/dice6.png',
-                    width: 30,
+                    width: 20,
                     semanticLabel: 'A Sixth Dice Icon',
                   ),
                   title: const Text(
-                    '6. BOOM!',
+                    'BOOM!',
                     style: TextStyle(
                       color: Colors.black,
                       fontFamily: 'Amaranth',
-                      fontSize: 22,
+                      fontSize: 20,
                       fontStyle: FontStyle.italic,
                     ),
                   ),
                 ),
-                SizedBox(
-                  width: 168,
-                  height: 168,
-                  child: Image.asset(
-                    'lib/images/dice$imageNumber.png',
-                  ),
-                ),
-                Text(
-                  'Number Of Sixes: $sixCounter',
-                  style: const TextStyle(
-                    color: Colors.black,
-                    fontFamily: 'Amaranth',
-                    fontSize: 12,
-                    fontStyle: FontStyle.italic,
-                  ),
-                ),
-                ElevatedButton.icon(
-                  onPressed: () => imageNumberChanger(),
-                  iconAlignment: IconAlignment.end,
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.white,
-                    elevation: 0,
-                    shape: const RoundedRectangleBorder(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(
-                          15.0,
-                        ),
+                Wrap(
+                  alignment: WrapAlignment.center,
+                  crossAxisAlignment: WrapCrossAlignment.center,
+                  direction: Axis.vertical,
+                  spacing: 8.0,
+                  runSpacing: 4.0,
+                  children: [
+                    SizedBox(
+                      width: 110.0,
+                      height: 110.0,
+                      child: Image.asset(
+                        'lib/images/dice$imageNumber.png',
                       ),
                     ),
-                    padding: const EdgeInsets.symmetric(
-                      vertical: 10.0,
-                      horizontal: 80.0,
-                    ),
-                    side: const BorderSide(
-                      width: 1.0,
-                      color: Colors.green,
-                    ),
-                  ),
-                  label: Text(
-                    'Roll',
-                    style: TextStyle(
-                      color: Colors.green[400],
-                      fontFamily: 'Amaranth',
-                      fontSize: 18,
-                      fontStyle: FontStyle.italic,
-                    ),
-                  ),
-                  icon: Icon(
-                    Icons.loop_outlined,
-                    color: Colors.green[400],
-                    size: 20,
-                    semanticLabel: 'Roll Loop',
-                  ),
-                ),
-                ElevatedButton.icon(
-                  onPressed: () => resetTheGame(),
-                  iconAlignment: IconAlignment.end,
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.white,
-                    elevation: 0,
-                    shape: const RoundedRectangleBorder(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(
-                          15.0,
-                        ),
+                    Text(
+                      'Number Of Sixes: $sixCounter',
+                      style: const TextStyle(
+                        color: Colors.black,
+                        fontFamily: 'Amaranth',
+                        fontSize: 14,
                       ),
                     ),
-                    padding: const EdgeInsets.symmetric(
-                      vertical: 10.0,
-                      horizontal: 80.0,
+                    ElevatedButton.icon(
+                      onPressed: () => imageNumberChanger(),
+                      iconAlignment: IconAlignment.end,
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.transparent,
+                        elevation: 0,
+                        shape: const RoundedRectangleBorder(
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(
+                              15.0,
+                            ),
+                          ),
+                        ),
+                        padding: const EdgeInsets.symmetric(
+                          vertical: 10.0,
+                          horizontal: 84.0,
+                        ),
+                        side: const BorderSide(
+                          width: 1.0,
+                          color: Colors.green,
+                        ),
+                      ),
+                      label: Text(
+                        'Roll',
+                        style: TextStyle(
+                          color: Colors.green[400],
+                          fontFamily: 'Amaranth',
+                          fontSize: 18,
+                          fontStyle: FontStyle.italic,
+                        ),
+                      ),
+                      icon: Icon(
+                        Icons.gamepad_outlined,
+                        color: Colors.green[400],
+                        size: 20,
+                        semanticLabel: 'Roll Loop',
+                      ),
                     ),
-                    side: const BorderSide(
-                      width: 1.0,
-                      color: Colors.green,
+                    ElevatedButton.icon(
+                      onPressed: () => resetTheGame(),
+                      iconAlignment: IconAlignment.end,
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.transparent,
+                        elevation: 0,
+                        shape: const RoundedRectangleBorder(
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(
+                              15.0,
+                            ),
+                          ),
+                        ),
+                        padding: const EdgeInsets.symmetric(
+                          vertical: 10.0,
+                          horizontal: 80.0,
+                        ),
+                        side: const BorderSide(
+                          width: 1.0,
+                          color: Colors.green,
+                        ),
+                      ),
+                      label: Text(
+                        'Reset',
+                        style: TextStyle(
+                          color: Colors.green[400],
+                          fontFamily: 'Amaranth',
+                          fontSize: 18,
+                          fontStyle: FontStyle.italic,
+                        ),
+                      ),
+                      icon: Icon(
+                        Icons.loop_outlined,
+                        color: Colors.green[400],
+                        size: 20,
+                        semanticLabel: 'Roll Loop',
+                      ),
                     ),
-                  ),
-                  label: Text(
-                    'Reset',
-                    style: TextStyle(
-                      color: Colors.green[400],
-                      fontFamily: 'Amaranth',
-                      fontSize: 18,
-                      fontStyle: FontStyle.italic,
-                    ),
-                  ),
-                  icon: Icon(
-                    Icons.loop_outlined,
-                    color: Colors.green[400],
-                    size: 20,
-                    semanticLabel: 'Roll Loop',
-                  ),
+                  ],
                 ),
               ], // columnChildren[]
             ),
