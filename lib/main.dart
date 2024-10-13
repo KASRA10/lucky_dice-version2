@@ -41,7 +41,20 @@ class _LuckyDiceChangerState extends State<LuckyDiceChanger> {
         imageNumber = Random().nextInt(6) + 1;
       },
     );
+    if (imageNumber == 6) {
+      sixCounter++;
+    } else {
+      sixCounter;
+    }
   } // End Of imageNumberCHanger
+
+  // Reset Numbers Method
+  void resetTheGame() {
+    setState(() {
+      imageNumber = 1;
+      sixCounter = 0;
+    });
+  } // End Of resetTheGame
 
   @override
   Widget build(BuildContext context) {
@@ -230,11 +243,98 @@ class _LuckyDiceChangerState extends State<LuckyDiceChanger> {
                     ),
                   ),
                 ),
-                Expanded(
+                SizedBox(
+                  width: 168,
+                  height: 168,
                   child: Image.asset(
-                    'lib/images/dice$imageNumber',
+                    'lib/images/dice$imageNumber.png',
                   ),
-                )
+                ),
+                Text(
+                  'Number Of Sixes: $sixCounter',
+                  style: const TextStyle(
+                    color: Colors.black,
+                    fontFamily: 'Amaranth',
+                    fontSize: 12,
+                    fontStyle: FontStyle.italic,
+                  ),
+                ),
+                ElevatedButton.icon(
+                  onPressed: () => imageNumberChanger(),
+                  iconAlignment: IconAlignment.end,
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.white,
+                    elevation: 0,
+                    shape: const RoundedRectangleBorder(
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(
+                          15.0,
+                        ),
+                      ),
+                    ),
+                    padding: const EdgeInsets.symmetric(
+                      vertical: 10.0,
+                      horizontal: 80.0,
+                    ),
+                    side: const BorderSide(
+                      width: 1.0,
+                      color: Colors.green,
+                    ),
+                  ),
+                  label: Text(
+                    'Roll',
+                    style: TextStyle(
+                      color: Colors.green[400],
+                      fontFamily: 'Amaranth',
+                      fontSize: 18,
+                      fontStyle: FontStyle.italic,
+                    ),
+                  ),
+                  icon: Icon(
+                    Icons.loop_outlined,
+                    color: Colors.green[400],
+                    size: 20,
+                    semanticLabel: 'Roll Loop',
+                  ),
+                ),
+                ElevatedButton.icon(
+                  onPressed: () => resetTheGame(),
+                  iconAlignment: IconAlignment.end,
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.white,
+                    elevation: 0,
+                    shape: const RoundedRectangleBorder(
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(
+                          15.0,
+                        ),
+                      ),
+                    ),
+                    padding: const EdgeInsets.symmetric(
+                      vertical: 10.0,
+                      horizontal: 80.0,
+                    ),
+                    side: const BorderSide(
+                      width: 1.0,
+                      color: Colors.green,
+                    ),
+                  ),
+                  label: Text(
+                    'Reset',
+                    style: TextStyle(
+                      color: Colors.green[400],
+                      fontFamily: 'Amaranth',
+                      fontSize: 18,
+                      fontStyle: FontStyle.italic,
+                    ),
+                  ),
+                  icon: Icon(
+                    Icons.loop_outlined,
+                    color: Colors.green[400],
+                    size: 20,
+                    semanticLabel: 'Roll Loop',
+                  ),
+                ),
               ], // columnChildren[]
             ),
           ),
